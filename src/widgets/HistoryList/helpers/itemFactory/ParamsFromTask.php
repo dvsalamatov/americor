@@ -2,7 +2,6 @@
 
 namespace app\widgets\HistoryList\helpers\itemFactory;
 
-use app\models\Sms;
 use app\models\Task;
 use app\widgets\HistoryList\helpers\itemFactory\contracts\ParamsCreatorInterface;
 

@@ -2,8 +2,6 @@
 
 namespace app\widgets\HistoryList\helpers\itemFactory;
 
-use app\models\Fax;
-use app\models\Sms;
 use app\widgets\HistoryList\helpers\itemFactory\contracts\ParamsCreatorInterface;
 
 class ParamsFromDefault implements ParamsCreatorInterface

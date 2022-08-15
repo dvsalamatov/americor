@@ -3,7 +3,6 @@
 namespace app\widgets\HistoryList\helpers\itemFactory;
 
 use app\models\Fax;
-use app\models\Sms;
 use app\widgets\HistoryList\helpers\itemFactory\contracts\ParamsCreatorInterface;
 use Yii;
 use yii\helpers\Html;

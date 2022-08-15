@@ -3,7 +3,6 @@
 namespace app\widgets\HistoryList\helpers\itemFactory;
 
 use app\models\Call;
-use app\models\Sms;
 use app\widgets\HistoryList\helpers\itemFactory\contracts\ParamsCreatorInterface;
 
 class ParamsFromCall implements ParamsCreatorInterface
