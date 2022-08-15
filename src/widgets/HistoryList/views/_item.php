@@ -11,7 +11,7 @@ use app\widgets\HistoryList\helpers\itemFactory\ItemParamsFactory;
 $body = HistoryListHelper::getBodyByModel($model);
 $userName = $model->user ? $model->user->username : null;
 
-$viewItemDto = ItemParamsFactory::create($model);
+$viewItemDto = (new ItemParamsFactory($model->event))->create($model);
 
 echo $this->render($viewItemDto->getViewName(), $viewItemDto->getParams());
 

@@ -4,9 +4,6 @@ namespace app\widgets\HistoryList\helpers;
 
 class ItemViewDto
 {
-    const VIEW_COMMON = '_item_common';
-    const VIEW_STATUS_CHANGE = '_item_statuses_change';
-
     private string $viewName;
 
     private array $params;
