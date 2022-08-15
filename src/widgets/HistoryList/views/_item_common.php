@@ -1,15 +1,19 @@
 <?php
 
-use app\models\User;
 use yii\helpers\Html;
+use app\widgets\DateTime\DateTime;
 
-/* @var $user User */
-/* @var $body string */
-/* @var $footer string */
-/* @var $footerDatetime string */
-/* @var $bodyDatetime string */
-/* @var $iconClass string */
+/**
+ * @var string $userName
+ * @var string $body
+ * @var string $bodyDatetime
+ * @var string $footer
+ * @var string $footerDatetime
+ * @var string $iconClass
+ * @var string $content
+ */
 ?>
+
 <?php echo Html::tag('i', '', ['class' => "icon icon-circle icon-main white $iconClass"]); ?>
 
     <div class="bg-success ">
@@ -17,13 +21,13 @@ use yii\helpers\Html;
 
         <?php if (isset($bodyDatetime)): ?>
             <span>
-       <?= \app\widgets\DateTime\DateTime::widget(['dateTime' => $bodyDatetime]) ?>
+       <?= DateTime::widget(['dateTime' => $bodyDatetime]) ?>
     </span>
         <?php endif; ?>
     </div>
 
-<?php if (isset($user)): ?>
-    <div class="bg-info"><?= $user->username; ?></div>
+<?php if ($userName): ?>
+    <div class="bg-info"><?= $userName; ?></div>
 <?php endif; ?>
 
 <?php if (isset($content) && $content): ?>
@@ -34,9 +38,9 @@ use yii\helpers\Html;
 
 <?php if (isset($footer) || isset($footerDatetime)): ?>
     <div class="bg-warning">
-        <?php echo isset($footer) ? $footer : '' ?>
+        <?php echo $footer ?? '' ?>
         <?php if (isset($footerDatetime)): ?>
-            <span><?= \app\widgets\DateTime\DateTime::widget(['dateTime' => $footerDatetime]) ?></span>
+            <span><?= DateTime::widget(['dateTime' => $footerDatetime]) ?></span>
         <?php endif; ?>
     </div>
 <?php endif; ?>

@@ -8,20 +8,16 @@ use app\models\History;
 
 class HistoryListHelper
 {
-    public static function getBodyByModel(History $model)
+    public static function getBodyByModel(History $model): string
     {
         switch ($model->event) {
             case History::EVENT_CREATED_TASK:
             case History::EVENT_COMPLETED_TASK:
             case History::EVENT_UPDATED_TASK:
-                $task = $model->task;
-                return "$model->eventText: " . ($task->title ?? '');
+                return "$model->eventText: " . ($model->task->title ?? '');
             case History::EVENT_INCOMING_SMS:
             case History::EVENT_OUTGOING_SMS:
-                return $model->sms->message ? $model->sms->message : '';
-            case History::EVENT_OUTGOING_FAX:
-            case History::EVENT_INCOMING_FAX:
-                return $model->eventText;
+                return $model->sms->message ?? '';
             case History::EVENT_CUSTOMER_CHANGE_TYPE:
                 return "$model->eventText " .
                     (Customer::getTypeTextByType($model->getDetailOldValue('type')) ?? "not set") . ' to ' .
